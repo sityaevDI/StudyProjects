@@ -57,11 +57,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(275, 107);
+            this.button2.Location = new System.Drawing.Point(275, 94);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "dick";
+            this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
