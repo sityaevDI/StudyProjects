@@ -16,5 +16,11 @@ namespace CarnavalSuits
         {
             InitializeComponent();
         }
+
+        private void клиентыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var client = new Client();
+            client.Show();
+        }
     }
 }
