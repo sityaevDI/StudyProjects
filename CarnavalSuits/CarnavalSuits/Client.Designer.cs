@@ -34,32 +34,32 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbClient = new System.Windows.Forms.GroupBox();
+            this.gbEdit = new System.Windows.Forms.GroupBox();
+            this.dtPassportDate = new System.Windows.Forms.DateTimePicker();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.tbPassport = new System.Windows.Forms.TextBox();
+            this.tbPassportGiven = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbAdress = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbSearch = new System.Windows.Forms.GroupBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.gbList = new System.Windows.Forms.GroupBox();
             this.dgvMain = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbPhone = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbAdress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbPassportGiven = new System.Windows.Forms.TextBox();
-            this.tbPassport = new System.Windows.Forms.TextBox();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.dtPassportDate = new System.Windows.Forms.DateTimePicker();
-            this.gbEdit = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbLeftButtons.SuspendLayout();
             this.gbClient.SuspendLayout();
+            this.gbEdit.SuspendLayout();
             this.gbSearch.SuspendLayout();
             this.gbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
-            this.gbEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -97,6 +97,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -122,6 +123,7 @@
             // 
             this.gbClient.Controls.Add(this.gbSearch);
             this.gbClient.Controls.Add(this.gbList);
+            this.gbClient.Controls.Add(this.gbEdit);
             this.gbClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbClient.Location = new System.Drawing.Point(3, 3);
             this.gbClient.Name = "gbClient";
@@ -129,6 +131,148 @@
             this.gbClient.TabIndex = 0;
             this.gbClient.TabStop = false;
             this.gbClient.Text = "Клиенты";
+            // 
+            // gbEdit
+            // 
+            this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbEdit.Controls.Add(this.dtPassportDate);
+            this.gbEdit.Controls.Add(this.btnCancel);
+            this.gbEdit.Controls.Add(this.label5);
+            this.gbEdit.Controls.Add(this.btnOk);
+            this.gbEdit.Controls.Add(this.tbPassport);
+            this.gbEdit.Controls.Add(this.tbPassportGiven);
+            this.gbEdit.Controls.Add(this.label6);
+            this.gbEdit.Controls.Add(this.label4);
+            this.gbEdit.Controls.Add(this.tbAdress);
+            this.gbEdit.Controls.Add(this.label3);
+            this.gbEdit.Controls.Add(this.tbPhone);
+            this.gbEdit.Controls.Add(this.label2);
+            this.gbEdit.Controls.Add(this.tbName);
+            this.gbEdit.Controls.Add(this.label1);
+            this.gbEdit.Location = new System.Drawing.Point(7, 82);
+            this.gbEdit.Name = "gbEdit";
+            this.gbEdit.Size = new System.Drawing.Size(471, 265);
+            this.gbEdit.TabIndex = 5;
+            this.gbEdit.TabStop = false;
+            this.gbEdit.Text = "Изменение";
+            this.gbEdit.Visible = false;
+            // 
+            // dtPassportDate
+            // 
+            this.dtPassportDate.Location = new System.Drawing.Point(183, 139);
+            this.dtPassportDate.Name = "dtPassportDate";
+            this.dtPassportDate.Size = new System.Drawing.Size(140, 20);
+            this.dtPassportDate.TabIndex = 10;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(390, 236);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Отмена";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(180, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Дата выдачи";
+            // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(346, 236);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(38, 23);
+            this.btnOk.TabIndex = 13;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // tbPassport
+            // 
+            this.tbPassport.Location = new System.Drawing.Point(9, 139);
+            this.tbPassport.Name = "tbPassport";
+            this.tbPassport.Size = new System.Drawing.Size(129, 20);
+            this.tbPassport.TabIndex = 8;
+            // 
+            // tbPassportGiven
+            // 
+            this.tbPassportGiven.Location = new System.Drawing.Point(9, 189);
+            this.tbPassportGiven.Name = "tbPassportGiven";
+            this.tbPassportGiven.Size = new System.Drawing.Size(375, 20);
+            this.tbPassportGiven.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 173);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Кем выдан";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Серия и номер паспорта";
+            // 
+            // tbAdress
+            // 
+            this.tbAdress.Location = new System.Drawing.Point(232, 87);
+            this.tbAdress.Name = "tbAdress";
+            this.tbAdress.Size = new System.Drawing.Size(233, 20);
+            this.tbAdress.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(229, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Адрес";
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Location = new System.Drawing.Point(9, 87);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(179, 20);
+            this.tbPhone.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Телефон";
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(9, 35);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(456, 20);
+            this.tbName.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Фамилия Имя Отчество";
             // 
             // gbSearch
             // 
@@ -149,7 +293,6 @@
             // 
             // gbList
             // 
-            this.gbList.Controls.Add(this.gbEdit);
             this.gbList.Controls.Add(this.dgvMain);
             this.gbList.Location = new System.Drawing.Point(6, 80);
             this.gbList.Name = "gbList";
@@ -160,152 +303,15 @@
             // 
             // dgvMain
             // 
+            this.dgvMain.AllowUserToAddRows = false;
+            this.dgvMain.AllowUserToDeleteRows = false;
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMain.Location = new System.Drawing.Point(6, 19);
             this.dgvMain.Name = "dgvMain";
+            this.dgvMain.ReadOnly = true;
+            this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMain.Size = new System.Drawing.Size(459, 246);
             this.dgvMain.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Фамилия Имя Отчество";
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(9, 35);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(456, 20);
-            this.tbName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Телефон";
-            // 
-            // tbPhone
-            // 
-            this.tbPhone.Location = new System.Drawing.Point(9, 87);
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(179, 20);
-            this.tbPhone.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Адрес";
-            // 
-            // tbAdress
-            // 
-            this.tbAdress.Location = new System.Drawing.Point(232, 87);
-            this.tbAdress.Name = "tbAdress";
-            this.tbAdress.Size = new System.Drawing.Size(233, 20);
-            this.tbAdress.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 123);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Серия и номер паспорта";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 173);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Кем выдан";
-            // 
-            // tbPassportGiven
-            // 
-            this.tbPassportGiven.Location = new System.Drawing.Point(9, 189);
-            this.tbPassportGiven.Name = "tbPassportGiven";
-            this.tbPassportGiven.Size = new System.Drawing.Size(375, 20);
-            this.tbPassportGiven.TabIndex = 12;
-            // 
-            // tbPassport
-            // 
-            this.tbPassport.Location = new System.Drawing.Point(9, 139);
-            this.tbPassport.Name = "tbPassport";
-            this.tbPassport.Size = new System.Drawing.Size(129, 20);
-            this.tbPassport.TabIndex = 8;
-            // 
-            // btnOk
-            // 
-            this.btnOk.Location = new System.Drawing.Point(346, 236);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(38, 23);
-            this.btnOk.TabIndex = 13;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(180, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Дата выдачи";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(390, 236);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // dtPassportDate
-            // 
-            this.dtPassportDate.Location = new System.Drawing.Point(183, 139);
-            this.dtPassportDate.Name = "dtPassportDate";
-            this.dtPassportDate.Size = new System.Drawing.Size(140, 20);
-            this.dtPassportDate.TabIndex = 10;
-            // 
-            // gbEdit
-            // 
-            this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbEdit.Controls.Add(this.dtPassportDate);
-            this.gbEdit.Controls.Add(this.btnCancel);
-            this.gbEdit.Controls.Add(this.label5);
-            this.gbEdit.Controls.Add(this.btnOk);
-            this.gbEdit.Controls.Add(this.tbPassport);
-            this.gbEdit.Controls.Add(this.tbPassportGiven);
-            this.gbEdit.Controls.Add(this.label6);
-            this.gbEdit.Controls.Add(this.label4);
-            this.gbEdit.Controls.Add(this.tbAdress);
-            this.gbEdit.Controls.Add(this.label3);
-            this.gbEdit.Controls.Add(this.tbPhone);
-            this.gbEdit.Controls.Add(this.label2);
-            this.gbEdit.Controls.Add(this.tbName);
-            this.gbEdit.Controls.Add(this.label1);
-            this.gbEdit.Location = new System.Drawing.Point(0, 4);
-            this.gbEdit.Name = "gbEdit";
-            this.gbEdit.Size = new System.Drawing.Size(471, 265);
-            this.gbEdit.TabIndex = 3;
-            this.gbEdit.TabStop = false;
-            this.gbEdit.Text = "Изменение";
             // 
             // Client
             // 
@@ -315,15 +321,16 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Client";
             this.Text = "Клиенты";
+            this.Load += new System.EventHandler(this.Client_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gbLeftButtons.ResumeLayout(false);
             this.gbClient.ResumeLayout(false);
+            this.gbEdit.ResumeLayout(false);
+            this.gbEdit.PerformLayout();
             this.gbSearch.ResumeLayout(false);
             this.gbSearch.PerformLayout();
             this.gbList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
-            this.gbEdit.ResumeLayout(false);
-            this.gbEdit.PerformLayout();
             this.ResumeLayout(false);
 
         }

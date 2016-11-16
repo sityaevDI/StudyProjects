@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace CarnavalSuits
 {
-    public partial class Form1 : Form
+    
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }
@@ -22,5 +23,20 @@ namespace CarnavalSuits
             var client = new Client();
             client.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Globals.logic = new Logic("DENIS-PC", "CarnavalCostumes_IIS");
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }
+
+    public static class Globals
+    {
+        public static Logic logic; 
     }
 }

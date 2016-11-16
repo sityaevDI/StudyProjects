@@ -24,12 +24,13 @@ namespace CarnavalSuits
             InitializeComponent();
         }
 
-
         public void showEdit()
         {
             gbEdit.Visible = true;
             gbList.Visible = false;
             gbSearch.Enabled = false;
+            gbLeftButtons.Enabled = false;
+
         }
 
         public void hideEdit()
@@ -37,13 +38,30 @@ namespace CarnavalSuits
             gbEdit.Visible = false;
             gbList.Visible = true;
             gbSearch.Enabled = true;
+            gbLeftButtons.Enabled = true;
+            loadDataGrid();
         }
 
+        public void showEdit(DataGridViewRow row)
+        {
+            showEdit();
+
+            tbAdress.Text = row.Cells[3].Value.ToString();
+            tbName.Text = row.Cells[1].Value.ToString();
+            tbPassport.Text = row.Cells[4].Value.ToString();
+            tbPassportGiven.Text = row.Cells[5].Value.ToString();
+            tbPhone.Text = row.Cells[2].Value.ToString();
+            var date = row.Cells[6].Value;
+            dtPassportDate.Value = new DateTime();
+        }
+
+        int clientId;
         bool edit = false;
         bool selectionMode = false;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            edit = false;
             showEdit();
         }
 
@@ -54,12 +72,12 @@ namespace CarnavalSuits
                 adress = tbAdress.Text,
                 paspNum = tbPassport.Text,
                 paspGiven = tbPassportGiven.Text,
-                paspDate = dtPassportDate.ToString(); //neoch
+                paspDate = dtPassportDate.Value.Date.ToString("yyyy-MM-dd"); 
 
             string query = "";
             if (!edit)
                 query = string.Format(@"insert into [Client] (name, phone, adress,documentNum, 
-                documentGivenPlace, DocumentGivenDate) values ({0}, {1}, {2}, {3}, {4}, {5})",
+                documentGivenPlace, DocumentGivenDate) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
                  name, phone, adress, paspNum, paspGiven, paspDate);
             else
             {
@@ -70,7 +88,7 @@ namespace CarnavalSuits
                     idDt, name, phone, adress, paspNum, paspGiven, paspDate);
             }
 
-            Logic.executeNonQuery(query);
+            Globals.logic.executeNonQuery(query);
             hideEdit();
         }
 
@@ -82,38 +100,35 @@ namespace CarnavalSuits
         private void btnEdit_Click(object sender, EventArgs e)
         {
             edit = true;
-        }
-    }
-
-    public class Logic
-    {
-        public Logic(string dataSource,string catalog)
-        {
-            var connectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=true",dataSource,catalog);
-            connection = new SqlConnection(connectionString);
+            try
+            {
+                var currentLine = dgvMain.CurrentRow;
+                clientId = Convert.ToInt16(currentLine.Cells[0].Value);
+                showEdit(currentLine);
+            }
+            catch { }
         }
 
-        SqlConnection connection;
-        SqlCommand cmd;
-
-        public void loadDgv(ref DataGridView dgv)
+        private void loadDataGrid()
         {
-            string query = "select * from ClientsView";
-            var result = getData(query);
-
-            dgv.DataSource = result;
-            dgv.Columns[0].Visible = false;
+            var query = "select * from Client_View";
+            Globals.logic.loadDgv(ref dgvMain, query);
         }
 
-        public DataSet getData(string query)
+        private void Client_Load(object sender, EventArgs e)
         {
-            var ds = new DataSet();
-            return ds;
+            loadDataGrid();
         }
 
-        public void executeNonQuery(string query)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int id = Convert.ToInt32(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[0].Value);
+                var query = @"delete from [Client] where id = " + id;
+                Globals.logic.executeNonQuery(query);          
+            }
+            catch { }
         }
     }
 }
