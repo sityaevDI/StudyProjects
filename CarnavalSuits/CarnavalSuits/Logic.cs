@@ -9,11 +9,18 @@ using System.Windows.Forms;
 
 namespace CarnavalSuits
 {
+    public static class Globals
+    {
+        public static Logic logic;
+        public static int valueMember;
+    }
+
     public class Logic
     {
         public Logic(string dataSource, string catalog)
         {
-            var connectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=True;", dataSource, catalog);
+            var connectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=True;",
+                dataSource, catalog);
             connection = new SqlConnection();
             connection.ConnectionString = connectionString;
         }

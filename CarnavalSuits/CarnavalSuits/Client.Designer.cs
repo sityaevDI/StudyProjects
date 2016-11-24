@@ -34,6 +34,10 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbClient = new System.Windows.Forms.GroupBox();
+            this.gbSearch = new System.Windows.Forms.GroupBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.gbList = new System.Windows.Forms.GroupBox();
+            this.dgvMain = new System.Windows.Forms.DataGridView();
             this.gbEdit = new System.Windows.Forms.GroupBox();
             this.dtPassportDate = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -49,17 +53,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gbSearch = new System.Windows.Forms.GroupBox();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.gbList = new System.Windows.Forms.GroupBox();
-            this.dgvMain = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbLeftButtons.SuspendLayout();
             this.gbClient.SuspendLayout();
-            this.gbEdit.SuspendLayout();
             this.gbSearch.SuspendLayout();
             this.gbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
+            this.gbEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -122,8 +122,8 @@
             // gbClient
             // 
             this.gbClient.Controls.Add(this.gbSearch);
-            this.gbClient.Controls.Add(this.gbList);
             this.gbClient.Controls.Add(this.gbEdit);
+            this.gbClient.Controls.Add(this.gbList);
             this.gbClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbClient.Location = new System.Drawing.Point(3, 3);
             this.gbClient.Name = "gbClient";
@@ -131,6 +131,46 @@
             this.gbClient.TabIndex = 0;
             this.gbClient.TabStop = false;
             this.gbClient.Text = "Клиенты";
+            // 
+            // gbSearch
+            // 
+            this.gbSearch.Controls.Add(this.tbSearch);
+            this.gbSearch.Location = new System.Drawing.Point(6, 19);
+            this.gbSearch.Name = "gbSearch";
+            this.gbSearch.Size = new System.Drawing.Size(471, 55);
+            this.gbSearch.TabIndex = 1;
+            this.gbSearch.TabStop = false;
+            this.gbSearch.Text = "Поиск";
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(9, 19);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(456, 20);
+            this.tbSearch.TabIndex = 0;
+            // 
+            // gbList
+            // 
+            this.gbList.Controls.Add(this.dgvMain);
+            this.gbList.Location = new System.Drawing.Point(6, 80);
+            this.gbList.Name = "gbList";
+            this.gbList.Size = new System.Drawing.Size(471, 265);
+            this.gbList.TabIndex = 2;
+            this.gbList.TabStop = false;
+            this.gbList.Text = "Список клиентов";
+            // 
+            // dgvMain
+            // 
+            this.dgvMain.AllowUserToAddRows = false;
+            this.dgvMain.AllowUserToDeleteRows = false;
+            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMain.Location = new System.Drawing.Point(6, 19);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.ReadOnly = true;
+            this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMain.Size = new System.Drawing.Size(459, 246);
+            this.dgvMain.TabIndex = 0;
+            this.dgvMain.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellContentDoubleClick);
             // 
             // gbEdit
             // 
@@ -274,45 +314,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Фамилия Имя Отчество";
             // 
-            // gbSearch
-            // 
-            this.gbSearch.Controls.Add(this.tbSearch);
-            this.gbSearch.Location = new System.Drawing.Point(6, 19);
-            this.gbSearch.Name = "gbSearch";
-            this.gbSearch.Size = new System.Drawing.Size(471, 55);
-            this.gbSearch.TabIndex = 1;
-            this.gbSearch.TabStop = false;
-            this.gbSearch.Text = "Поиск";
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Location = new System.Drawing.Point(9, 19);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(456, 20);
-            this.tbSearch.TabIndex = 0;
-            // 
-            // gbList
-            // 
-            this.gbList.Controls.Add(this.dgvMain);
-            this.gbList.Location = new System.Drawing.Point(6, 80);
-            this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(471, 265);
-            this.gbList.TabIndex = 2;
-            this.gbList.TabStop = false;
-            this.gbList.Text = "Список клиентов";
-            // 
-            // dgvMain
-            // 
-            this.dgvMain.AllowUserToAddRows = false;
-            this.dgvMain.AllowUserToDeleteRows = false;
-            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMain.Location = new System.Drawing.Point(6, 19);
-            this.dgvMain.Name = "dgvMain";
-            this.dgvMain.ReadOnly = true;
-            this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMain.Size = new System.Drawing.Size(459, 246);
-            this.dgvMain.TabIndex = 0;
-            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,12 +326,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gbLeftButtons.ResumeLayout(false);
             this.gbClient.ResumeLayout(false);
-            this.gbEdit.ResumeLayout(false);
-            this.gbEdit.PerformLayout();
             this.gbSearch.ResumeLayout(false);
             this.gbSearch.PerformLayout();
             this.gbList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
+            this.gbEdit.ResumeLayout(false);
+            this.gbEdit.PerformLayout();
             this.ResumeLayout(false);
 
         }

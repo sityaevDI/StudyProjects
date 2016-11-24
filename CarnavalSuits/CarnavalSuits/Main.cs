@@ -33,10 +33,11 @@ namespace CarnavalSuits
         {
             Close();
         }
-    }
 
-    public static class Globals
-    {
-        public static Logic logic; 
+        private void типыКостюмовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tp = new Type();
+            tp.Show();
+        }
     }
 }
