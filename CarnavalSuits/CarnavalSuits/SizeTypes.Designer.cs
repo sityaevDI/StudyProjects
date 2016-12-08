@@ -1,6 +1,6 @@
 ﻿namespace CarnavalSuits
 {
-    partial class Type
+    partial class SizeTypes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gbForm = new System.Windows.Forms.GroupBox();
+            this.gbSearch = new System.Windows.Forms.GroupBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.gbEdit = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.tbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.gbSearch = new System.Windows.Forms.GroupBox();
-            this.gbForm = new System.Windows.Forms.GroupBox();
-            this.gbEdit = new System.Windows.Forms.GroupBox();
             this.gbList = new System.Windows.Forms.GroupBox();
             this.dgvMain = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -43,14 +43,60 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbLeftButtons = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gbSearch.SuspendLayout();
             this.gbForm.SuspendLayout();
+            this.gbSearch.SuspendLayout();
             this.gbEdit.SuspendLayout();
             this.gbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.gbLeftButtons.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // gbForm
+            // 
+            this.gbForm.Controls.Add(this.gbSearch);
+            this.gbForm.Controls.Add(this.gbEdit);
+            this.gbForm.Controls.Add(this.gbList);
+            this.gbForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbForm.Location = new System.Drawing.Point(3, 3);
+            this.gbForm.Name = "gbForm";
+            this.gbForm.Size = new System.Drawing.Size(408, 264);
+            this.gbForm.TabIndex = 0;
+            this.gbForm.TabStop = false;
+            this.gbForm.Text = "Типы размеров";
+            // 
+            // gbSearch
+            // 
+            this.gbSearch.Controls.Add(this.tbSearch);
+            this.gbSearch.Location = new System.Drawing.Point(6, 19);
+            this.gbSearch.Name = "gbSearch";
+            this.gbSearch.Size = new System.Drawing.Size(393, 55);
+            this.gbSearch.TabIndex = 1;
+            this.gbSearch.TabStop = false;
+            this.gbSearch.Text = "Поиск";
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(9, 19);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(374, 20);
+            this.tbSearch.TabIndex = 0;
+            // 
+            // gbEdit
+            // 
+            this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbEdit.Controls.Add(this.btnCancel);
+            this.gbEdit.Controls.Add(this.btnOk);
+            this.gbEdit.Controls.Add(this.tbName);
+            this.gbEdit.Controls.Add(this.label1);
+            this.gbEdit.Location = new System.Drawing.Point(6, 80);
+            this.gbEdit.Name = "gbEdit";
+            this.gbEdit.Size = new System.Drawing.Size(393, 170);
+            this.gbEdit.TabIndex = 5;
+            this.gbEdit.TabStop = false;
+            this.gbEdit.Text = "Изменение";
+            this.gbEdit.Visible = false;
             // 
             // btnCancel
             // 
@@ -88,51 +134,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Наименование";
             // 
-            // tbSearch
-            // 
-            this.tbSearch.Location = new System.Drawing.Point(9, 19);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(374, 20);
-            this.tbSearch.TabIndex = 0;
-            // 
-            // gbSearch
-            // 
-            this.gbSearch.Controls.Add(this.tbSearch);
-            this.gbSearch.Location = new System.Drawing.Point(6, 19);
-            this.gbSearch.Name = "gbSearch";
-            this.gbSearch.Size = new System.Drawing.Size(393, 55);
-            this.gbSearch.TabIndex = 1;
-            this.gbSearch.TabStop = false;
-            this.gbSearch.Text = "Поиск";
-            // 
-            // gbForm
-            // 
-            this.gbForm.Controls.Add(this.gbSearch);
-            this.gbForm.Controls.Add(this.gbEdit);
-            this.gbForm.Controls.Add(this.gbList);
-            this.gbForm.Location = new System.Drawing.Point(3, 3);
-            this.gbForm.Name = "gbForm";
-            this.gbForm.Size = new System.Drawing.Size(408, 264);
-            this.gbForm.TabIndex = 0;
-            this.gbForm.TabStop = false;
-            this.gbForm.Text = "Типы костюмов";
-            // 
-            // gbEdit
-            // 
-            this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbEdit.Controls.Add(this.btnCancel);
-            this.gbEdit.Controls.Add(this.btnOk);
-            this.gbEdit.Controls.Add(this.tbName);
-            this.gbEdit.Controls.Add(this.label1);
-            this.gbEdit.Location = new System.Drawing.Point(6, 80);
-            this.gbEdit.Name = "gbEdit";
-            this.gbEdit.Size = new System.Drawing.Size(393, 170);
-            this.gbEdit.TabIndex = 5;
-            this.gbEdit.TabStop = false;
-            this.gbEdit.Text = "Изменение";
-            this.gbEdit.Visible = false;
-            // 
             // gbList
             // 
             this.gbList.Controls.Add(this.dgvMain);
@@ -154,7 +155,6 @@
             this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMain.Size = new System.Drawing.Size(377, 142);
             this.dgvMain.TabIndex = 0;
-            this.dgvMain.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellContentDoubleClick);
             // 
             // btnDelete
             // 
@@ -191,7 +191,7 @@
             this.gbLeftButtons.Controls.Add(this.btnDelete);
             this.gbLeftButtons.Controls.Add(this.btnEdit);
             this.gbLeftButtons.Controls.Add(this.btnAdd);
-            this.gbLeftButtons.Location = new System.Drawing.Point(417, 3);
+            this.gbLeftButtons.Location = new System.Drawing.Point(419, 3);
             this.gbLeftButtons.Name = "gbLeftButtons";
             this.gbLeftButtons.Size = new System.Drawing.Size(98, 264);
             this.gbLeftButtons.TabIndex = 2;
@@ -209,23 +209,20 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(518, 257);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(521, 261);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // Type
+            // SizeTypes
             // 
-            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(518, 257);
+            this.ClientSize = new System.Drawing.Size(521, 261);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Type";
-            this.Text = "Типы костюмов";
-            this.Load += new System.EventHandler(this.Type_Load);
+            this.Name = "SizeTypes";
+            this.Text = "Типы размеров";
+            this.gbForm.ResumeLayout(false);
             this.gbSearch.ResumeLayout(false);
             this.gbSearch.PerformLayout();
-            this.gbForm.ResumeLayout(false);
             this.gbEdit.ResumeLayout(false);
             this.gbEdit.PerformLayout();
             this.gbList.ResumeLayout(false);
@@ -238,20 +235,20 @@
 
         #endregion
 
+        private System.Windows.Forms.GroupBox gbForm;
+        private System.Windows.Forms.GroupBox gbSearch;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.GroupBox gbEdit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.GroupBox gbSearch;
-        private System.Windows.Forms.GroupBox gbForm;
-        private System.Windows.Forms.GroupBox gbEdit;
+        private System.Windows.Forms.GroupBox gbList;
+        private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox gbLeftButtons;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox gbList;
-        private System.Windows.Forms.DataGridView dgvMain;
     }
 }

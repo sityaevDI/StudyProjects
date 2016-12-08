@@ -36,7 +36,7 @@ namespace CarnavalSuits
 
         private void типыКостюмовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tp = new Type();
+            var tp = new CostumeType();
             tp.Show();
         }
     }

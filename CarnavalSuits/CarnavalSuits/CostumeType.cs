@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CarnavalSuits
 {
-    public partial class Type : Form
+    public partial class CostumeType : Form
     {
-        public Type()
+        public CostumeType()
         {
             InitializeComponent();
         }
 
-        public Type(bool selectionMode)
+        public CostumeType(bool selectionMode)
         {
             this.selectionMode = selectionMode;
             InitializeComponent();
