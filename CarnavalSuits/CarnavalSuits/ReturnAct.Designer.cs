@@ -30,20 +30,17 @@
         {
             this.dgvMain = new System.Windows.Forms.DataGridView();
             this.gbList = new System.Windows.Forms.GroupBox();
-            this.dtPassportDate = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.gbEdit = new System.Windows.Forms.GroupBox();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.tbPassport = new System.Windows.Forms.TextBox();
-            this.tbPassportGiven = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbAdress = new System.Windows.Forms.TextBox();
+            this.btnDeleteCostume = new System.Windows.Forms.Button();
+            this.btnAddCostume = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSelectOrder = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnOk = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.gbList.SuspendLayout();
             this.gbEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbLeftButtons.SuspendLayout();
             this.gbClient.SuspendLayout();
@@ -84,13 +82,6 @@
             this.gbList.TabStop = false;
             this.gbList.Text = "Список актов возврата";
             // 
-            // dtPassportDate
-            // 
-            this.dtPassportDate.Location = new System.Drawing.Point(183, 139);
-            this.dtPassportDate.Name = "dtPassportDate";
-            this.dtPassportDate.Size = new System.Drawing.Size(140, 20);
-            this.dtPassportDate.TabIndex = 10;
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(390, 236);
@@ -100,32 +91,20 @@
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(180, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Дата выдачи";
-            // 
             // gbEdit
             // 
             this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbEdit.Controls.Add(this.dtPassportDate);
-            this.gbEdit.Controls.Add(this.btnCancel);
-            this.gbEdit.Controls.Add(this.label5);
-            this.gbEdit.Controls.Add(this.btnOk);
-            this.gbEdit.Controls.Add(this.tbPassport);
-            this.gbEdit.Controls.Add(this.tbPassportGiven);
-            this.gbEdit.Controls.Add(this.label6);
-            this.gbEdit.Controls.Add(this.label4);
-            this.gbEdit.Controls.Add(this.tbAdress);
+            this.gbEdit.Controls.Add(this.btnDeleteCostume);
+            this.gbEdit.Controls.Add(this.btnAddCostume);
             this.gbEdit.Controls.Add(this.label3);
-            this.gbEdit.Controls.Add(this.tbPhone);
+            this.gbEdit.Controls.Add(this.dataGridView1);
+            this.gbEdit.Controls.Add(this.btnSelectOrder);
+            this.gbEdit.Controls.Add(this.dateTimePicker1);
+            this.gbEdit.Controls.Add(this.comboBox1);
+            this.gbEdit.Controls.Add(this.btnCancel);
+            this.gbEdit.Controls.Add(this.btnOk);
             this.gbEdit.Controls.Add(this.label2);
-            this.gbEdit.Controls.Add(this.tbName);
             this.gbEdit.Controls.Add(this.label1);
             this.gbEdit.Location = new System.Drawing.Point(7, 82);
             this.gbEdit.Name = "gbEdit";
@@ -134,6 +113,66 @@
             this.gbEdit.TabStop = false;
             this.gbEdit.Text = "Изменение";
             this.gbEdit.Visible = false;
+            // 
+            // btnDeleteCostume
+            // 
+            this.btnDeleteCostume.Location = new System.Drawing.Point(361, 133);
+            this.btnDeleteCostume.Name = "btnDeleteCostume";
+            this.btnDeleteCostume.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteCostume.TabIndex = 20;
+            this.btnDeleteCostume.Text = "Удалить";
+            this.btnDeleteCostume.UseVisualStyleBackColor = true;
+            // 
+            // btnAddCostume
+            // 
+            this.btnAddCostume.Location = new System.Drawing.Point(361, 75);
+            this.btnAddCostume.Name = "btnAddCostume";
+            this.btnAddCostume.Size = new System.Drawing.Size(75, 23);
+            this.btnAddCostume.TabIndex = 19;
+            this.btnAddCostume.Text = "Добавить";
+            this.btnAddCostume.UseVisualStyleBackColor = true;
+            this.btnAddCostume.Click += new System.EventHandler(this.btnAddCostume_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(179, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Список возвращаемых костюмов";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 75);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(347, 150);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // btnSelectOrder
+            // 
+            this.btnSelectOrder.Location = new System.Drawing.Point(259, 33);
+            this.btnSelectOrder.Name = "btnSelectOrder";
+            this.btnSelectOrder.Size = new System.Drawing.Size(31, 23);
+            this.btnSelectOrder.TabIndex = 4;
+            this.btnSelectOrder.Text = "...";
+            this.btnSelectOrder.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(296, 35);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(8, 35);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(245, 21);
+            this.comboBox1.TabIndex = 14;
             // 
             // btnOk
             // 
@@ -144,85 +183,23 @@
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             // 
-            // tbPassport
-            // 
-            this.tbPassport.Location = new System.Drawing.Point(9, 139);
-            this.tbPassport.Name = "tbPassport";
-            this.tbPassport.Size = new System.Drawing.Size(129, 20);
-            this.tbPassport.TabIndex = 8;
-            // 
-            // tbPassportGiven
-            // 
-            this.tbPassportGiven.Location = new System.Drawing.Point(9, 189);
-            this.tbPassportGiven.Name = "tbPassportGiven";
-            this.tbPassportGiven.Size = new System.Drawing.Size(375, 20);
-            this.tbPassportGiven.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 173);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Кем выдан";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 123);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Серия и номер паспорта";
-            // 
-            // tbAdress
-            // 
-            this.tbAdress.Location = new System.Drawing.Point(232, 87);
-            this.tbAdress.Name = "tbAdress";
-            this.tbAdress.Size = new System.Drawing.Size(233, 20);
-            this.tbAdress.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Адрес";
-            // 
-            // tbPhone
-            // 
-            this.tbPhone.Location = new System.Drawing.Point(9, 87);
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(179, 20);
-            this.tbPhone.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 71);
+            this.label2.Location = new System.Drawing.Point(294, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Телефон";
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(9, 35);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(456, 20);
-            this.tbName.TabIndex = 1;
+            this.label2.Text = "Дата";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Фамилия Имя Отчество";
+            this.label1.Text = "Договор";
             // 
             // tbSearch
             // 
@@ -266,6 +243,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -275,6 +253,7 @@
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Изменить";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -284,12 +263,13 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gbClient
             // 
             this.gbClient.Controls.Add(this.gbSearch);
-            this.gbClient.Controls.Add(this.gbList);
             this.gbClient.Controls.Add(this.gbEdit);
+            this.gbClient.Controls.Add(this.gbList);
             this.gbClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbClient.Location = new System.Drawing.Point(3, 3);
             this.gbClient.Name = "gbClient";
@@ -316,10 +296,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ReturnAct";
             this.Text = "Акты возврата";
+            this.Load += new System.EventHandler(this.ReturnAct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.gbList.ResumeLayout(false);
             this.gbEdit.ResumeLayout(false);
             this.gbEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gbLeftButtons.ResumeLayout(false);
             this.gbClient.ResumeLayout(false);
@@ -333,20 +315,10 @@
 
         private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.GroupBox gbList;
-        private System.Windows.Forms.DateTimePicker dtPassportDate;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox gbEdit;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.TextBox tbPassport;
-        private System.Windows.Forms.TextBox tbPassportGiven;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbAdress;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -356,5 +328,12 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox gbClient;
         private System.Windows.Forms.GroupBox gbSearch;
+        private System.Windows.Forms.Button btnSelectOrder;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnDeleteCostume;
+        private System.Windows.Forms.Button btnAddCostume;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

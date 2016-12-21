@@ -24,8 +24,8 @@ namespace CarnavalSuits
             gbSearch.Enabled = false;
             gbLeftButtons.Enabled = false;
 
-            tbAdress.Text = tbName.Text = tbPassport.Text =
-                tbPassportGiven.Text = tbPhone.Text = "";
+            dateTimePicker1.Value = DateTime.Today;
+            dataGridView1.Rows.Clear();
         }
 
         public void hideEdit()
@@ -41,16 +41,17 @@ namespace CarnavalSuits
         {
             showEdit();
 
-            tbAdress.Text = row.Cells[3].Value.ToString();
-            tbName.Text = row.Cells[1].Value.ToString();
-            tbPassport.Text = row.Cells[4].Value.ToString();
-            tbPassportGiven.Text = row.Cells[5].Value.ToString();
-            tbPhone.Text = row.Cells[2].Value.ToString();
-            var date = row.Cells[6].Value;
-            dtPassportDate.Value = new DateTime();
+            //tbAdress.Text = row.Cells[3].Value.ToString();
+            //tbName.Text = row.Cells[1].Value.ToString();
+            //tbPassport.Text = row.Cells[4].Value.ToString();
+            //tbPassportGiven.Text = row.Cells[5].Value.ToString();
+            //tbPhone.Text = row.Cells[2].Value.ToString();
+            //var date = row.Cells[6].Value;
+            //dtPassportDate.Value = new DateTime();
         }
 
-        int clientId;
+        int returnAct;
+        protected List<string> returnes = new List<string>();
         bool edit = false;
         bool selectionMode = false;
 
@@ -62,25 +63,19 @@ namespace CarnavalSuits
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            string name = tbName.Text,
-                phone = tbPhone.Text,
-                adress = tbAdress.Text,
-                paspNum = tbPassport.Text,
-                paspGiven = tbPassportGiven.Text,
-                paspDate = dtPassportDate.Value.Date.ToString("yyyy-MM-dd");
+            string orderId = comboBox1.SelectedValue.ToString(),
+                actDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
 
             string query = "";
             if (!edit)
-                query = string.Format(@"insert into [Client] (name, phone, adress,documentNum, 
-                documentGivenPlace, DocumentGivenDate) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
-                 name, phone, adress, paspNum, paspGiven, paspDate);
+                query = string.Format(@"insert into [ReturnAct] (order_id, actDate, manager_id) 
+                                    values ('{0}', '{1}', '{2}', )", orderId, actDate, Globals.managerId);
             else
             {
                 var idRow = dgvMain.CurrentRow.Index;
                 var idDt = Convert.ToInt32(dgvMain.Rows[idRow].Cells[0].Value);
-                query = string.Format(@"update [Client] set name = '{1}', phone = '{2}', adress = '{3}',documentNum = '{4}', 
-                    documentGivenPlace = '{5}', DocumentGivenDate = '{6}' where id = {0}",
-                    idDt, name, phone, adress, paspNum, paspGiven, paspDate);
+                query = string.Format(@"update [ReturnAct] set order_id = '{1}', actDate = '{2}', manager_id = '{3}'
+                                where id = {0}", idDt, orderId, actDate, Globals.managerId);
             }
 
             Globals.logic.executeNonQuery(query);
@@ -98,7 +93,7 @@ namespace CarnavalSuits
             try
             {
                 var currentLine = dgvMain.CurrentRow;
-                clientId = Convert.ToInt16(currentLine.Cells[0].Value);
+                returnAct = Convert.ToInt16(currentLine.Cells[0].Value);
                 showEdit(currentLine);
             }
             catch { }
@@ -106,13 +101,8 @@ namespace CarnavalSuits
 
         private void loadDataGrid()
         {
-            var query = "select * from Client_View";
+            var query = "select * from [dbo].[ReturnAct_View]";
             Globals.logic.loadDgv(ref dgvMain, query);
-        }
-
-        private void Client_Load(object sender, EventArgs e)
-        {
-            loadDataGrid();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -141,5 +131,16 @@ namespace CarnavalSuits
             catch { }
         }
 
+        private void btnAddCostume_Click(object sender, EventArgs e)
+        {
+            var costume = new ReturnCostume();
+            costume.Owner = this;
+            costume.Show();
+        }
+
+        private void ReturnAct_Load(object sender, EventArgs e)
+        {
+            loadDataGrid();
+        }
     }
 }

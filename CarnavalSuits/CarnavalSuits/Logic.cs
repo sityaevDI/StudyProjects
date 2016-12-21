@@ -12,6 +12,7 @@ namespace CarnavalSuits
     public static class Globals
     {
         public static Logic logic;
+        public static int managerId;
         public static int valueMember;
     }
 

@@ -52,6 +52,12 @@
     <Compile Include="Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="CostumeSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostumeSize.Designer.cs">
+      <DependentUpon>CostumeSize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     <Compile Include="ReturnAct.Designer.cs">
       <DependentUpon>ReturnAct.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReturnCostume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnCostume.Designer.cs">
+      <DependentUpon>ReturnCostume.cs</DependentUpon>
+    </Compile>
     <Compile Include="SizeTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostumeSize.resx">
+      <DependentUpon>CostumeSize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -99,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReturnAct.resx">
       <DependentUpon>ReturnAct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnCostume.resx">
+      <DependentUpon>ReturnCostume.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SizeTypes.resx">
       <DependentUpon>SizeTypes.cs</DependentUpon>
