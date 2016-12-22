@@ -50,8 +50,8 @@ namespace CarnavalSuits
             //dtPassportDate.Value = new DateTime();
         }
 
+        public string[] costumes;
         int returnAct;
-        protected List<string> returnes = new List<string>();
         bool edit = false;
         bool selectionMode = false;
 
@@ -133,9 +133,9 @@ namespace CarnavalSuits
 
         private void btnAddCostume_Click(object sender, EventArgs e)
         {
-            var costume = new ReturnCostume();
-            costume.Owner = this;
-            costume.Show();
+            //var costume = new ReturnCostume();
+            //costume.Owner = this;
+            //costume.Show();
         }
 
         private void ReturnAct_Load(object sender, EventArgs e)
