@@ -14,14 +14,12 @@ namespace CarnavalSuits
     {
         int order, days, act;
         DateTime startDay;
-        int[] costumesInAct;
         double price, daylyRent;
         List< string> costumes = new List<string>();
 
-        public ReturnCostume(int order, int[] returned)
+        public ReturnCostume(int order)
         {
             this.order = order;
-            costumesInAct = returned;
             InitializeComponent();
         }
 
@@ -32,11 +30,8 @@ namespace CarnavalSuits
 
         void loadCostumes()
         {
-            string costumes = "";
-            foreach (int c in costumesInAct)
-                costumes += c.ToString() + ',';
             string query = string.Format("select * from CostumesInOrder_View where(order_id = {0})",
-                order, costumes);
+                order);
             cbCostume.ValueMember = "id";
             cbCostume.DisplayMember = "name";
 
@@ -52,6 +47,13 @@ namespace CarnavalSuits
             string sum = (rent + shtraf).ToString();
             var costume = cbCostume.SelectedValue;
             costumes.Add(string.Format("insert into ReturnActBody (act_id, actSum, orderbody_id) values ({0},{1},{2})", sum, costume));
+        }
+
+        private void btnSelectOrder_Click(object sender, EventArgs e)
+        {
+            OrderCostumes orc = new OrderCostumes(order);
+            orc.Owner = this;
+            orc.Show();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -87,6 +89,11 @@ namespace CarnavalSuits
             days = dt.Days;
             lbDeposit.Text = price.ToString();
             tbRent.Text = Math.Round(daylyRent * days, 2).ToString();
+        }
+
+        public void setCostume(int orderline)
+        {
+            cbCostume.SelectedValue = orderline;
         }
     }
 }

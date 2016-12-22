@@ -56,6 +56,7 @@
             this.btnSelectOrder.TabIndex = 15;
             this.btnSelectOrder.Text = "...";
             this.btnSelectOrder.UseVisualStyleBackColor = true;
+            this.btnSelectOrder.Click += new System.EventHandler(this.btnSelectOrder_Click);
             // 
             // cbCostume
             // 
@@ -78,6 +79,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(6, 19);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(59, 17);

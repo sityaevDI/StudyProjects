@@ -133,9 +133,10 @@ namespace CarnavalSuits
 
         private void btnAddCostume_Click(object sender, EventArgs e)
         {
-            //var costume = new ReturnCostume();
-            //costume.Owner = this;
-            //costume.Show();
+            var order = (int)comboBox1.SelectedValue;
+            var costume = new ReturnCostume(order);
+            costume.Owner = this;
+            costume.Show();
         }
 
         private void ReturnAct_Load(object sender, EventArgs e)

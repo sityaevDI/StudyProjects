@@ -26,7 +26,7 @@ namespace CarnavalSuits
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Globals.logic = new Logic("ELENA-PC", "CarnavalCostumes_IIS");
+            Globals.logic = new Logic("DENIS-PC", "CarnavalCostumes_IIS");
 
             dataGridView1.DataSource = Globals.logic.getDataTable(@"SELECT        dbo.Costume.id, dbo.Costume.name as 'Название костюма', dbo.Type.name AS 'Тип костюма', dbo.Costume.daylyPrice as 'Цена за день', dbo.Costume.price as 'Стоимость'
                             FROM            dbo.Costume INNER JOIN
@@ -57,6 +57,12 @@ namespace CarnavalSuits
         {
             basket f1 = new basket();
             f1.ShowDialog();
+        }
+
+        private void актВозвратаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var returnAct = new ReturnAct();
+            returnAct.Show();
         }
     }
 }
