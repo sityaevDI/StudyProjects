@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarnavalSuits
@@ -142,6 +135,11 @@ namespace CarnavalSuits
         private void ReturnAct_Load(object sender, EventArgs e)
         {
             loadDataGrid();
+            string query = "select * from Order";
+            comboBox1.DisplayMember = "id";
+            comboBox1.ValueMember = "id";
+            comboBox1.DataSource = Globals.logic.getDataTable(query);
+
         }
     }
 }
