@@ -45,6 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,10 +160,11 @@
             this.tbRent.Name = "tbRent";
             this.tbRent.Size = new System.Drawing.Size(100, 20);
             this.tbRent.TabIndex = 25;
+            this.tbRent.Text = "1200";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(307, 71);
+            this.dateTimePicker1.Location = new System.Drawing.Point(311, 71);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(122, 20);
             this.dateTimePicker1.TabIndex = 26;
@@ -170,7 +173,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(304, 52);
+            this.label4.Location = new System.Drawing.Point(308, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 27;
@@ -182,6 +185,7 @@
             this.tbUsherb.Name = "tbUsherb";
             this.tbUsherb.Size = new System.Drawing.Size(100, 20);
             this.tbUsherb.TabIndex = 29;
+            this.tbUsherb.Text = "0";
             // 
             // label5
             // 
@@ -211,12 +215,31 @@
             this.button1.Text = "Отмена";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(333, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.Text = "1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(330, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Количество";
+            // 
             // ReturnCostume
             // 
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 194);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.tbUsherb);
@@ -260,5 +283,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

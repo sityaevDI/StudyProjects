@@ -119,18 +119,18 @@
             // 
             this.btnDeleteCostume.Location = new System.Drawing.Point(361, 133);
             this.btnDeleteCostume.Name = "btnDeleteCostume";
-            this.btnDeleteCostume.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteCostume.Size = new System.Drawing.Size(32, 23);
             this.btnDeleteCostume.TabIndex = 20;
-            this.btnDeleteCostume.Text = "Удалить";
+            this.btnDeleteCostume.Text = "-";
             this.btnDeleteCostume.UseVisualStyleBackColor = true;
             // 
             // btnAddCostume
             // 
             this.btnAddCostume.Location = new System.Drawing.Point(361, 75);
             this.btnAddCostume.Name = "btnAddCostume";
-            this.btnAddCostume.Size = new System.Drawing.Size(75, 23);
+            this.btnAddCostume.Size = new System.Drawing.Size(32, 23);
             this.btnAddCostume.TabIndex = 19;
-            this.btnAddCostume.Text = "Добавить";
+            this.btnAddCostume.Text = "+";
             this.btnAddCostume.UseVisualStyleBackColor = true;
             this.btnAddCostume.Click += new System.EventHandler(this.btnAddCostume_Click);
             // 
@@ -296,6 +296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 351);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ReturnAct";
             this.Text = "Акты возврата";
             this.Load += new System.EventHandler(this.ReturnAct_Load);
