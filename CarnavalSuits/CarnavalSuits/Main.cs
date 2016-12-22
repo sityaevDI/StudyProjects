@@ -26,7 +26,7 @@ namespace CarnavalSuits
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Globals.logic = new Logic("DENIS-PC", "CarnavalCostumes_IIS");
+            Globals.logic = new Logic("elena-PC", "CarnavalCostumes_IIS");
 
             dataGridView1.DataSource = Globals.logic.getDataTable(@"SELECT        dbo.Costume.id, dbo.Costume.name as 'Название костюма', dbo.Type.name AS 'Тип костюма', dbo.Costume.daylyPrice as 'Цена за день', dbo.Costume.price as 'Стоимость'
                             FROM            dbo.Costume INNER JOIN
