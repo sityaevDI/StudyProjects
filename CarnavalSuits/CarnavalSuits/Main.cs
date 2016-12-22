@@ -39,5 +39,17 @@ namespace CarnavalSuits
             var tp = new CostumeType();
             tp.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CostumeDetails c = new CostumeDetails();
+            c.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            basket f1 = new basket();
+            f1.ShowDialog();
+        }
     }
 }

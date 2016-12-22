@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="basket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="basket.Designer.cs">
+      <DependentUpon>basket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostumeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostumeDetails.Designer.cs">
+      <DependentUpon>CostumeDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="CostumeSize.cs">
       <SubType>Form</SubType>
@@ -91,8 +103,14 @@
     <Compile Include="SizeTypes.Designer.cs">
       <DependentUpon>SizeTypes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="basket.resx">
+      <DependentUpon>basket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostumeDetails.resx">
+      <DependentUpon>CostumeDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CostumeSize.resx">
       <DependentUpon>CostumeSize.cs</DependentUpon>
