@@ -17,12 +17,7 @@ namespace Макет
             InitializeComponent();
         }
 
-        private void открытьToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void добавитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             Employee emp = new Employee();
             emp.Show();
@@ -34,21 +29,10 @@ namespace Макет
             emp.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Employees_Load(object sender, EventArgs e)
         {
-            Employee emp = new Employee();
-            emp.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Уволен");
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Report rt = new Report();
-            rt.Show();
+            var query = "select * from Workers_View";
+            dataGridView1.DataSource = DBConnect.getTableAsDT(query);
         }
     }
 }

@@ -38,18 +38,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(276, 34);
+            this.button2.Location = new System.Drawing.Point(276, 119);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 23);
+            this.button2.Size = new System.Drawing.Size(118, 23);
             this.button2.TabIndex = 17;
             this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(130, 161);
+            this.button1.Location = new System.Drawing.Point(276, 61);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 23);
+            this.button1.Size = new System.Drawing.Size(118, 23);
             this.button1.TabIndex = 16;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 138);
+            this.label2.Location = new System.Drawing.Point(12, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 15;
@@ -65,7 +65,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 135);
+            this.textBox1.Location = new System.Drawing.Point(130, 35);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(140, 20);
             this.textBox1.TabIndex = 14;
@@ -82,7 +82,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 34);
+            this.listBox1.Location = new System.Drawing.Point(12, 61);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(258, 95);
             this.listBox1.TabIndex = 12;

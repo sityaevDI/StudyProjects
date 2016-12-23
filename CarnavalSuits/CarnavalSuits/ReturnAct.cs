@@ -135,7 +135,7 @@ namespace CarnavalSuits
         private void ReturnAct_Load(object sender, EventArgs e)
         {
             loadDataGrid();
-            string query = "select * from Order";
+            string query = "select * from [Order]";
             comboBox1.DisplayMember = "id";
             comboBox1.ValueMember = "id";
             comboBox1.DataSource = Globals.logic.getDataTable(query);
